@@ -1,0 +1,15 @@
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\bin\Debug\netcoreapp3.1\Business.deps.json
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\bin\Debug\netcoreapp3.1\Business.dll
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\bin\Debug\netcoreapp3.1\Business.pdb
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\obj\Debug\netcoreapp3.1\Business.csproj.AssemblyReference.cache
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\obj\Debug\netcoreapp3.1\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfoInputs.cache
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfo.cs
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\obj\Debug\netcoreapp3.1\Business.csproj.CoreCompileInputs.cache
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\obj\Debug\netcoreapp3.1\Business.csproj.CopyComplete
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\obj\Debug\netcoreapp3.1\Business.dll
+C:\Users\Enver YILDIRIM\source\repos\ReCapProject\Business\obj\Debug\netcoreapp3.1\Business.pdb
