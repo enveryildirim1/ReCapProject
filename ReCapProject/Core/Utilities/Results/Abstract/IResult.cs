@@ -8,5 +8,6 @@ namespace Core.Utilities.Results.Abstract
     {
         bool Seccess { get; }
         string Message { get; }
+        bool Success { get; set; }
     }
 }
