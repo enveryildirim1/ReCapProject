@@ -1,17 +1,18 @@
-using Business.Abstract;
-using Business.Concrete;
-using DataAccess.Abstract;
-using DataAccess.Concrete.EntityFramwork;
+
+using Core.DependencyResolvers;
+using Core.Extensions;
+using Core.Utilities.IoC;
+using Core.Utilities.Securty.Encryption;
+using Core.Utilities.Securty.JWT;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.IdentityModel.Tokens;
+
+
 
 namespace WebAPI
 {
@@ -27,24 +28,26 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-            services.AddSingleton<IBrandService, IBrandManager>();
-            services.AddSingleton<IBrandDal, EfBrandDal>();
+            var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
-            services.AddSingleton<ICarService, ICarManager>();
-            services.AddSingleton<ICarDal, EfCarDal>();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidIssuer = tokenOptions.Issuer,
+                        ValidAudience = tokenOptions.Audience,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
+                    };
+                });
+            services.AddDependencyResolvers(new ICoreModule[]{
+                new CoreModule()
+            });
 
-            services.AddSingleton<IColourService, IColourManager>();
-            services.AddSingleton<IColourDal, EfColourDal>();
-
-            services.AddSingleton<ICustomerService, ICustomerManager>();
-            services.AddSingleton<ICustomerDal, EfCustomerDal>();
-
-            services.AddSingleton<IRentalService, IRentalManager>();
-            services.AddSingleton<IRentalDal, EfRentalDal>();
-
-            services.AddSingleton<IUserService, IUserManager>();
-            services.AddSingleton<IUserDal, EfUserDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
